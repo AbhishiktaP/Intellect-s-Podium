@@ -1,0 +1,112 @@
+﻿@model IntellectsPodium2.Models.Account
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/HomepageLayout.cshtml";
+}
+
+@*<h2>Details</h2>
+
+<div>
+    <h4>Account</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.FirstName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FirstName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LastName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LastName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Qualification)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Qualification)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Password)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Password)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ConfirmPassword)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ConfirmPassword)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.UserId }) |
+    @Html.ActionLink("Delete", "Delete", new { id = Model.UserId })
+    @Html.ActionLink("Back to List", "Index")
+</p>*@
+
+<div class="profile-container-2">
+    <button class="btn edit-profile-button">@Html.ActionLink("Edit", "Edit", new { @class = "green-button-text"})</button>
+    <h2 class="profile-sub-heading">Manage Personal Details</h2>
+    <div class="align-fields">
+        <div class="field">
+            <div class="field-name"><p>First Name</p></div>
+            <div class="field-width profile-edit-field-container">@Html.DisplayFor(model => model.FirstName, new { @class = "" })</div>
+        </div>
+        <div class="field">
+            <div class="field-name"><p>Last Name</p></div>
+            <div class="field-width"><input type="text" class="profile-edit-field"></div>
+        </div>
+    </div>
+    <div class="align-fields">
+        <div class="field">
+            <div class="field-name"><p>Qualification</p></div>
+            <div class="field-width"><input type="text" class="profile-edit-field"></div>
+        </div>
+        <div class="field">
+            <div class="field-name"><p>Email</p></div>
+            <div class="field-width"><input type="text" class="profile-edit-field"></div>
+        </div>
+    </div>
+    <br>
+    <hr class="hr-profile">
+    <h2 class="profile-sub-heading">Manage Password</h2>
+    <div class="align-fields">
+        <div class="field">
+            <div class="field-name"><p>Password</p></div>
+            <div class="field-width"><input type="text" class="profile-edit-field"></div>
+        </div>
+        <div class="field">
+            <div class="field-name"><p>Confirm Password</p></div>
+            <div class="field-width"><input type="text" class="profile-edit-field"></div>
+        </div>
+    </div>
+    <br>
+    <hr class="hr-profile">
+    <button class="btn update-profile-button"><span class="green-button-text">UPDATE PROFILE</button>
+</div>
+
+<button class="btn delete-profile-button">@Html.ActionLink("DELETE MY PROFILE", "Delete", new {@*id = item.UserId,*@ @class = "green-button-text"
+})</button>

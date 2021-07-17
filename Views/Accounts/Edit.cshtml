@@ -1,0 +1,90 @@
+﻿@model IntellectsPodium2.Models.Account
+
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/HomepageLayout.cshtml";
+}
+
+
+<div class="profile-page-main-container">
+
+    <div class="profile-container-1">
+        <div class="profile-picture-container">
+            <img class="profile-picture-image" src="~/Images/profile-picture.webp">
+        </div>
+        <div class="profile-name-container"></div>
+    </div>
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        @Html.HiddenFor(model => model.UserId)
+
+        <div class="profile-container-2">
+            <h2 class="profile-sub-heading">Manage Personal Details</h2>
+            <div class="align-fields">
+                <div class="field">
+                    <div class="field-name"><p>First Name</p></div>
+                    <div class="field-width">
+                        @Html.EditorFor(model => model.FirstName, new { htmlAttributes = new { @class = "profile-edit-field" } })
+                        @Html.ValidationMessageFor(model => model.FirstName, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="field">
+                    <div class="field-name"><p>Last Name</p></div>
+                    <div class="field-width">
+                        @Html.EditorFor(model => model.LastName, new { htmlAttributes = new { @class = "profile-edit-field" } })
+                        @Html.ValidationMessageFor(model => model.LastName, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </div>
+            <div class="align-fields">
+                <div class="field">
+                    <div class="field-name"><p>Qualification</p></div>
+                    <div class="field-width">
+                        @Html.EditorFor(model => model.Qualification, new { htmlAttributes = new { @class = "profile-edit-field" } })
+                        @Html.ValidationMessageFor(model => model.Qualification, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="field">
+                    <div class="field-name"><p>Email</p></div>
+                    <div class="field-width">
+                        @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "profile-edit-field" } })
+                        @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </div>
+            <br /><br /><br />
+            <h3 class="profile-sub-heading">Enter Password To Update:</h3>
+            <div class="align-fields">
+                <div class="field">
+                    <div class="field-name"><p>Password</p></div>
+                    <div class="field-width">
+                        @Html.EditorFor(model => model.Password, new { htmlAttributes = new { @class = "profile-edit-field" } })
+                        @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="field">
+                    <div class="field-name"><p>Confirm Password</p></div>
+                    <div class="field-width">
+                        @Html.EditorFor(model => model.ConfirmPassword, new { htmlAttributes = new { @class = "profile-edit-field" } })
+                        @Html.ValidationMessageFor(model => model.ConfirmPassword, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </div>
+            <input type="submit" value="UPDATE PROFILE" class="btn update-profile-button" />
+        </div>
+
+    }
+   
+
+</div>
+
+<button class="btn delete-profile-button"> @Html.ActionLink("DELETE MY ACCOUNT", "Delete", new { id = Model.UserId, @class = "green-button-text" })</button>
+
+
+
+
+
+

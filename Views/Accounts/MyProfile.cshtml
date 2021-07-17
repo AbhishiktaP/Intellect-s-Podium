@@ -1,0 +1,67 @@
+﻿@model IntellectsPodium2.Models.Account
+
+@{
+    ViewBag.Title = "MyProfile";
+    Layout = "~/Views/Shared/HomepageProfileLayout.cshtml";
+}
+
+
+
+<div class="profile-page-main-container">
+    <div class="profile-container-1">
+        <div class="profile-picture-container">
+            <img class="profile-picture-image" src="~/Images/profile-picture.webp">
+        </div>
+        <div class="profile-name-container">
+
+
+
+        </div>
+    </div>
+
+    <form>
+        <div class="profile-container-2">
+            <button class="btn edit-profile-button">@Html.ActionLink("EDIT MY PROFILE", "EditProfile", new { id = Model.UserId, @class="green-button-text" })</button>
+            <h2 class="profile-sub-heading">Manage Personal Details</h2>
+            <div class="align-fields">
+                <div class="field">
+                    <div class="field-name"><p>First Name</p></div>
+                    <div class="field-width"><div class="profile-edit-field"> @Html.DisplayFor(model => model.FirstName)</div></div>
+                </div>
+                <div class="field">
+                    <div class="field-name"><p>Last Name</p></div>
+                    <div class="field-width"><div class="profile-edit-field"> @Html.DisplayFor(model => model.LastName)</div></div>
+                </div>
+            </div>
+            <div class="align-fields">
+                <div class="field">
+                    <div class="field-name"><p>Qualification</p></div>
+                    <div class="field-width"><div class="profile-edit-field"> @Html.DisplayFor(model => model.Qualification)</div></div>
+                </div>
+                <div class="field">
+                    <div class="field-name"><p>Email</p></div>
+                    <div class="field-width"><div class="profile-edit-field"> @Html.DisplayFor(model => model.Email)</div></div>
+                </div>
+            </div>
+            <br>
+            <hr class="hr-profile">
+            <h2 class="profile-sub-heading">Manage Password</h2>
+            <div class="align-fields">
+                <div class="field">
+                    <div class="field-name"><p>Password</p></div>
+                    <div class="field-width"><div class="profile-edit-field"> @Html.DisplayFor(model => model.Password)</div></div>
+                </div>
+                <div class="field">
+                    <div class="field-name"><p>Confirm Password</p></div>
+                    <div class="field-width"><div class="profile-edit-field"> @Html.DisplayFor(model => model.ConfirmPassword)</div></div>
+                </div>
+            </div>
+            <br>
+            <hr class="hr-profile">
+            <button class="btn update-profile-button"><span class="green-button-text">UPDATE PROFILE</span></button>
+        </div>
+    </form>
+
+</div>
+<button class="btn delete-profile-button"><span class="green-button-text">DELETE MY PROFILE</span></button>
+
