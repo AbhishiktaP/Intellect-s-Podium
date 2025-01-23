@@ -1,0 +1,1 @@
+This project is a comprehensive learning platform designed to simplify and enhance online education. It enables users to access courses, track progress, and engage with interactive content. The platform focuses on a user-friendly interface and scalable features to support learners and educators alike.
